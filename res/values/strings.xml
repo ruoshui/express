@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">查快递</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_label">指南针</string>
+ 
+    <string name="bottom_item_one">查快递</string>
+    <string name="bottom_item_two">历史记录</string>
+    <string name="bottom_item_five">设置</string>
+    <string name="button_text">显示图标</string>
+    <string name="workbench_title">我执行的任务</string>
+    <string name="workbench_home_page">首  页</string>
+    <string name="workbench_add_task">新增任务</string>
+    <string name="num_0">0</string>
+    <string name="num_1">1</string>
+    <string name="num_2">2</string>
+    <string name="num_3">3</string>
+    <string name="num_4">4</string>
+    <string name="indicate_value">2</string>
+
+</resources>
