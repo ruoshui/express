@@ -7,69 +7,57 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="75dip" >
 
         <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/express_history_image"
+            android:layout_width="96dip"
+            android:layout_height="60dip"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/bottom_bar_icon_set_normal" />
+            android:layout_marginLeft="5dip"
+            android:src="@drawable/express_history_image" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:orientation="vertical" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/epxress_nu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5045205409800"
+                android:textColor="@color/black" />
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dip" >
+            </RelativeLayout>
 
-                    <TextView
-                        android:id="@+id/epxress_nu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5045205409800"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/express_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="日期：2013-6-3 23:20 星期一"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent" >
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/degree" />
-                </RelativeLayout>
-            </LinearLayout>
+            <TextView
+                android:id="@+id/express_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日期：2013-6-3 23:20 星期一"
+                android:textColor="@color/black" />
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/degree" />
+
+        <ImageView 
+              android:id="@+id/imageView5"
             android:layout_width="56dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:src="@drawable/arrow" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ImageView   android:id="@+id/imageView6"
         android:layout_width="fill_parent"
         android:layout_height="2dip"
         android:scaleType="fitXY"

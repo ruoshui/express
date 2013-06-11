@@ -131,5 +131,16 @@ public class PersonStringUtils extends Activity implements Serializable {
 		return verName;
 	}
 
+	public static String pareDateToString16(Date date) {
+
+		SimpleDateFormat forma = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String strtodate = null;
+		try {
+			strtodate = forma.format(date);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return strtodate;
+	}
 
 }

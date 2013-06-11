@@ -13,6 +13,7 @@
     <color name="b_font_color">#ff2277b2</color>
     <color name="index_font_color">#ff333333</color>
     <color name="index_font_count">#ff999999</color>
+       <color name="text_light_gray">#ff999999</color>
     <color name="index_sys_top_count">#ffff7200</color>
     <color name="yellow_border">#ffffa400</color>
     <color name="white">#ffffffff</color>

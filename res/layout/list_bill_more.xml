@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:paddingLeft="10.0dip"
+    android:paddingRight="10.0dip" >
+
+    <LinearLayout
+        android:id="@+id/list_more_loading"
+        android:layout_width="fill_parent"
+        android:layout_height="55.0dip"
+        android:gravity="center" >
+
+        <ProgressBar
+            android:layout_width="26.0sp"
+            android:layout_height="26.0sp"
+            android:layout_marginRight="10.0dip" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/bill_loading"
+            android:textColor="@color/text_light_gray" />
+    </LinearLayout>
+
+    
+    <RelativeLayout
+        android:id="@+id/list_more_fail"
+        android:layout_width="fill_parent"
+        android:layout_height="55.0dip"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/bill_query_fail"
+            android:textColor="@color/text_light_gray" />
+    </RelativeLayout>
+
+</FrameLayout>

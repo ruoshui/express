@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="@dimen/default_row_margin" >
+
+    <ProgressBar
+        android:id="@android:id/progress"
+        android:layout_width="30.0dip"
+        android:layout_height="30.0dip"
+        android:layout_marginRight="5.0dip"
+        android:indeterminateDrawable="@drawable/progress_spinner_black"
+        android:max="10000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bill_loading"
+        android:textSize="16.0sp" />
+
+</LinearLayout>

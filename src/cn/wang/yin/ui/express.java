@@ -47,7 +47,7 @@ public class express extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.express);
 		editText1 = (EditText) findViewById(R.id.editText1);
-		// editText1.setText("5045205409800");
+		 editText1.setText("5045205409800");
 		button1 = (Button) findViewById(R.id.button1);
 		express_list = (LinearLayout) findViewById(R.id.express_list);
 
@@ -79,13 +79,13 @@ public class express extends Activity {
 		express_list.removeAllViews();
 		for (ExpressData bean : datas) {
 			View child = inflater.inflate(R.layout.express_sinagle, null);
-			TextView textView1 = (TextView) child.findViewById(R.id.textView1);
-			ImageView imageView1 = (ImageView) child
-					.findViewById(R.id.imageView1);
-			TextView textView2 = (TextView) child.findViewById(R.id.textView2);
+			TextView textView1 = (TextView) child.findViewById(R.id.express_detail_date);
+//			ImageView imageView1 = (ImageView) child
+//					.findViewById(R.id.express_detail_image);
+			TextView textView2 = (TextView) child.findViewById(R.id.express_detail_content);
 			textView1.setText(""
-					+ PersonStringUtils.pareDateToString(bean.getFtime()));
-			textView2.setText("" + bean.getContext());
+					+ PersonStringUtils.pareDateToString16(bean.getFtime()));
+			textView2.setText("" + bean.getContext().replaceAll(" ", ""));
 			express_list.addView(child);
 		}
 
@@ -164,9 +164,10 @@ public class express extends Activity {
 	};
 
 	@Override
-	protected void onResume() {
+	protected void onStart() {
 		// TODO Auto-generated method stub
-		super.onResume();
+		super.onStart();
+		
 		if (p_dialog == null) {
 			p_dialog = new ProgressDialog(this);
 			p_dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -179,6 +180,13 @@ public class express extends Activity {
 			p_dialog.show();
 			new Thread(submitRunnnable).start();
 		}
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+	
 	}
 
 }

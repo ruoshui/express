@@ -94,10 +94,10 @@ public class FragmentExpress extends Fragment {
 		express_list.removeAllViews();
 		for (ExpressData bean : datas) {
 			View child = inflater.inflate(R.layout.express_sinagle, null);
-			TextView textView1 = (TextView) child.findViewById(R.id.textView1);
+			TextView textView1 = (TextView) child.findViewById(R.id.express_detail_date);
 			ImageView imageView1 = (ImageView) child
 					.findViewById(R.id.imageView1);
-			TextView textView2 = (TextView) child.findViewById(R.id.textView2);
+			TextView textView2 = (TextView) child.findViewById(R.id.express_detail_content);
 			textView1.setText(""
 					+ PersonStringUtils.pareDateToString(bean.getFtime()));
 			textView2.setText("" + bean.getContext());

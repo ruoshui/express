@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import cn.wang.yin.personal.R;
 import cn.wang.yin.ui.fragment.FragmentExecute;
@@ -34,6 +35,9 @@ public class FragmentMain extends FragmentActivity implements
 	Fragment SaveImage;
 	Fragment Compass;
 	FragmentHistoryExpress historyExpress;
+	Fragment fragmentTabs;
+
+	public static FragmentManager fm;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -57,9 +61,10 @@ public class FragmentMain extends FragmentActivity implements
 		bottomBar.setSelectedState(0);
 		// exprss = new FragmentExpress();
 		historyExpress = new FragmentHistoryExpress();
-
+		fragmentTabs = new FragmentTabsSearch();
 		// bottomBar.hideIndicate();//这个代码原来控制红色小图标的可见性
 		// bottomBar.showIndicate(12);
+		fm = getSupportFragmentManager();
 
 	}
 
@@ -71,6 +76,7 @@ public class FragmentMain extends FragmentActivity implements
 		switch (index) {
 		case 0:
 			details = new FragmentExecute();
+			//details = new FragmentTabsSearch();
 			break;
 		case 1:
 			details = historyExpress;

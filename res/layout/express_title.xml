@@ -3,35 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
+    
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="40dip"
         android:background="@drawable/bg_title_bar" >
+
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="历史记录" />
+            android:text="查快递" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="45dip"
+            android:layout_height="45dip"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/title_btn_back_selector"
-            android:text="@string/back_up" />
-
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:src="@drawable/title_btn_back_selector" />
     </RelativeLayout>
-
-    <ListView
-        android:id="@+id/listView_expresslist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
 
 </LinearLayout>

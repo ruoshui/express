@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="60.0dip"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:visibility="invisible" >
+
+        <ProgressBar
+            android:layout_width="24.0dip"
+            android:layout_height="24.0dip"
+            android:layout_marginRight="5.0dip" />
+
+        <TextView
+            android:id="@+id/loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh_loading"
+            android:textColor="@color/text_light_gray" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="60.0dip"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/refresh_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/pull_arrow_down" />
+
+        <TextView
+            android:id="@+id/refresh_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20.0dip"
+            android:text="@string/pull_refresh"
+            android:textColor="@color/text_light_gray" />
+    </LinearLayout>
+
+</FrameLayout>
