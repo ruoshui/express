@@ -4,8 +4,8 @@
     <string name="app_name">查快递</string>
     <string name="action_settings">Settings</string>
     <string name="app_label">指南针</string>
-    <string name="bottom_item_one">查快递</string>
-    <string name="bottom_item_two">历史记录</string>
+    <string name="express_search">查快递</string>
+    <string name="express_history">历史记录</string>
     <string name="bottom_item_five">设置</string>
     <string name="indicate_value">2</string>
     <string name="express_title">查快递</string>
@@ -15,4 +15,20 @@
     <string name="bill_loading">加载中</string>
     <string name="pull_refresh">下拉可以刷新</string>
     <string name="refresh_loading">加载中...</string>
+    <string name="express_name">快递公司：</string>
+    <string name="express_nu">快递单号:</string>
+    <string name="dialog_loadding">载入中……</string>
+    <string name="dialog_title_wait">请等待</string>
+    <string name="funtion_check_update">检查新版本</string>
+    <string name="settings_feedback">意见反馈</string>
+    <string name="settings_about">关于</string>
+    <string name="bak_chat_safe_tip">服务声明</string>
+    <string name="setting_function">软件设置</string>
+    <string name="help_using">使用帮助</string>
+    <string name="about">基本和基本初等函数的倒数公式
+函数的和差积商的求导法则
+反函数的求导法则
+符合函数的求导法则
+我很庆幸生活在这个世纪,因为无数科学家的努力使宇宙不在那么神秘,我也想成为一名科学家,探索宇宙的奥秘.我想问的是:飞船的轨道高度怎样控制?据我所知在长期失重的状态下会对宇航员的身体有害.我在电影中看到通过使飞船旋转提供向心力来充当重力,这种方法是否有效?还是有其他更科学的方法</string>
+
 </resources>

@@ -31,11 +31,11 @@ import cn.wang.yin.utils.PersonDbUtils;
  * */
 public class FragmentMain extends FragmentActivity implements
 		OnBackStackChangedListener {
-	Fragment exprss;
+	Fragment myexprss;
 	Fragment SaveImage;
 	Fragment Compass;
-	FragmentHistoryExpress historyExpress;
-	Fragment fragmentTabs;
+	Fragment historyExpress;
+	Fragment setting;
 
 	public static FragmentManager fm;
 
@@ -59,9 +59,10 @@ public class FragmentMain extends FragmentActivity implements
 			}
 		});
 		bottomBar.setSelectedState(0);
-		// exprss = new FragmentExpress();
+		myexprss = new FragmentExecute();
 		historyExpress = new FragmentHistoryExpress();
-		fragmentTabs = new FragmentTabsSearch();
+
+		setting = new FragmentSetting();
 		// bottomBar.hideIndicate();//这个代码原来控制红色小图标的可见性
 		// bottomBar.showIndicate(12);
 		fm = getSupportFragmentManager();
@@ -76,19 +77,18 @@ public class FragmentMain extends FragmentActivity implements
 		switch (index) {
 		case 0:
 			details = new FragmentExecute();
-			//details = new FragmentTabsSearch();
 			break;
 		case 1:
 			details = historyExpress;
 			break;
 		case 2:
-			details = new FragmentSetting();
+			details = setting;
 			break;
 		}
 
 		ft.replace(R.id.details, details);
 		ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-		// ft.addToBackStack(null);// 这行代码可以返回之前的操作（横屏的情况下，即两边都显示的情况下）
+		// ft.addToBackStack(index);// 这行代码可以返回之前的操作（横屏的情况下，即两边都显示的情况下）
 		ft.commit();
 	}
 

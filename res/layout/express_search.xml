@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+     android:textSize="@dimen/text_title_sign_size" 
+     >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,15 +21,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/express_title" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:background="@drawable/title_btn_back_selector"
-            android:text="@string/back_up" />
     </RelativeLayout>
 
     <ScrollView
@@ -47,7 +40,7 @@
                 android:layout_marginTop="15dip" >
 
                 <EditText
-                    android:id="@+id/editText1"
+                    android:id="@+id/express_nu_input"
                     android:layout_width="220dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -59,7 +52,7 @@
                 </EditText>
 
                 <Button
-                    android:id="@+id/button1"
+                    android:id="@+id/express_search_button"
                     android:layout_width="80dip"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -91,29 +84,32 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/express_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" android:visibility="gone">
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone" >
 
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dip" >
+                    android:layout_marginLeft="20dip" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="@string/action_settings"
+                        android:text="@string/express_name"
                         android:textColor="@color/black"
                         android:textSize="16.0sp" />
 
                     <TextView
-                        android:id="@+id/red_ball"
+                        android:id="@+id/express_name"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="TextView"
+                        android:text="@string/bill_loading"
                         android:textColor="@color/black"
                         android:textSize="16.0sp" />
                 </LinearLayout>
@@ -121,22 +117,22 @@
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_marginLeft="10dip" >
+                    android:layout_marginLeft="20dip" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="@string/bill_loading"
+                        android:text="@string/express_nu"
                         android:textColor="@color/black"
                         android:textSize="16.0sp" />
 
                     <TextView
-                        android:id="@+id/blue_ball"
+                        android:id="@+id/express_nu"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="TextView"
+                        android:text="@string/bill_loading"
                         android:textColor="@color/black"
                         android:textSize="16.0sp" />
                 </LinearLayout>

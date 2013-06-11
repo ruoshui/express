@@ -107,7 +107,7 @@ public class PersonStringUtils extends Activity implements Serializable {
 		int verCode = -1;
 		try {
 			verCode = context.getPackageManager().getPackageInfo(
-					"cn.etgps.etong", 0).versionCode;
+					context.getPackageName(), 0).versionCode;
 		} catch (NameNotFoundException e) {
 
 		}
@@ -118,7 +118,7 @@ public class PersonStringUtils extends Activity implements Serializable {
 		String verName = "";
 		try {
 			verName = context.getPackageManager().getPackageInfo(
-					"cn.etgps.etong", 0).versionName;
+					context.getPackageName(), 0).versionName;
 		} catch (NameNotFoundException e) {
 
 		}

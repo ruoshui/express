@@ -29,7 +29,7 @@ public class PersonConstant {
 			+ " u_carnumber varchar(30),"
 			+ " u_vehicleType varchar(30),"
 			+ " u_remark text ," + "u_deviceid  varchar(30) );";
-	public static final String SQL_EXPRESS_HISTORY = "create table if not exists express("
+	public static final String SQL_EXPRESS_HISTORY = "create table if not exists expressDetail("
 			+ " id  integer primary key autoincrement,"
 			+ " nu varchar(80),"
 			+ "updatetime  varchar(80))";
@@ -93,5 +93,11 @@ public class PersonConstant {
 	public static final int LOCATION_CHANGE = 23;
 	public static final String USER_FIRST_OPEN = "user_agent_info_first_open_cn.wang.yin";
 	public static final int ETONG_RESULTCODE_INDEX = 110;
-
+	/****
+	 * ¼ì²é¸üÐÂ
+	 */
+	public static final String UPDATE_SERVER ="http://cet.etgps.cn/download/android/";
+	public static final String UPDATE_APKNAME = "cet_release.apk";
+	public static final String UPDATE_VERJSON = "version.txt";
+	public static final String UPDATE_SAVENAME = "cet_release-new.apk";
 }

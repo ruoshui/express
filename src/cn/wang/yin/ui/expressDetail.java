@@ -32,44 +32,37 @@ import cn.wang.yin.utils.RemoteFactoryUtils;
 
 import com.caucho.hessian.client.HessianProxyFactory;
 
-public class express extends Activity {
-	EditText editText1;
-	Button button1;
+public class expressDetail extends Activity {
 	String num = "";
 	private ProgressDialog p_dialog;
 	LinearLayout express_list;
 	public static final int SUCCESS = 101;
 	public static final int FAIL = 102;
 	List<String> all = new ArrayList();
+	TextView express_nu;
+	TextView express_name;
+	Button back_up_button;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.express);
-		editText1 = (EditText) findViewById(R.id.editText1);
-		 editText1.setText("5045205409800");
-		button1 = (Button) findViewById(R.id.button1);
+		setContentView(R.layout.express_detail);
 		express_list = (LinearLayout) findViewById(R.id.express_list);
+		express_nu = (TextView) findViewById(R.id.express_nu);
+		express_name = (TextView) findViewById(R.id.express_name);
+		back_up_button = (Button) findViewById(R.id.back_up_button);
 
 		p_dialog = new ProgressDialog(this);
 		p_dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-		p_dialog.setMessage("载入中……");
-		p_dialog.setTitle("请等待");
-		button1.setOnClickListener(new View.OnClickListener() {
+		p_dialog.setMessage(getResources().getString(R.string.dialog_loadding));
+		p_dialog.setTitle(getResources().getString(R.string.dialog_title_wait));
+		back_up_button.setOnClickListener(new View.OnClickListener() {
+
 			@Override
 			public void onClick(View v) {
-				String express_num = editText1.getText().toString();
-				if (StringUtils.isNotBlank(express_num)) {
-					num = express_num;
-					p_dialog.show();
-					// p_dialog =ProgressDialog.show(express.this, "teee",
-					// "载入中……",true);
-					new Thread(submitRunnnable).start();
-
-				}
+				finish();
 			}
 		});
-
 	}
 
 	public void fresh(Set<ExpressData> datas) {
@@ -79,10 +72,10 @@ public class express extends Activity {
 		express_list.removeAllViews();
 		for (ExpressData bean : datas) {
 			View child = inflater.inflate(R.layout.express_sinagle, null);
-			TextView textView1 = (TextView) child.findViewById(R.id.express_detail_date);
-//			ImageView imageView1 = (ImageView) child
-//					.findViewById(R.id.express_detail_image);
-			TextView textView2 = (TextView) child.findViewById(R.id.express_detail_content);
+			TextView textView1 = (TextView) child
+					.findViewById(R.id.express_detail_date);
+			TextView textView2 = (TextView) child
+					.findViewById(R.id.express_detail_content);
 			textView1.setText(""
 					+ PersonStringUtils.pareDateToString16(bean.getFtime()));
 			textView2.setText("" + bean.getContext().replaceAll(" ", ""));
@@ -100,13 +93,18 @@ public class express extends Activity {
 			switch (msg.what) {
 			case SUCCESS: {
 				if (msg.obj != null) {
-					Set<ExpressData> datas = (Set<ExpressData>) msg.obj;
+					Express bean = (Express) msg.obj;
+					Set<ExpressData> datas = bean.getExpressDatas();
+					// bean.getCom()
+					express_name.setText(bean.getExpressname());
+					express_nu.setText(bean.getNu());
+
 					fresh(datas);
 				}
 			}
 				break;
 			case FAIL: {
-				AlertDialog dialog = new AlertDialog.Builder(express.this)
+				AlertDialog dialog = new AlertDialog.Builder(expressDetail.this)
 						.setTitle("提示")
 						.setMessage("需要网络，您的手机当前网络不可用，请设置您的网络")
 						.setPositiveButton("确定",
@@ -146,8 +144,8 @@ public class express extends Activity {
 			}
 			try {
 				Express bean = remot.scanExpress(num);
-				Set<ExpressData> datas = bean.getExpressDatas();
-				msg.obj = datas;
+				// Set<ExpressData> datas = bean.getExpressDatas();
+				msg.obj = bean;
 			} catch (Exception e) {
 				msg.what = FAIL;
 				e.printStackTrace();
@@ -167,7 +165,7 @@ public class express extends Activity {
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		
+
 		if (p_dialog == null) {
 			p_dialog = new ProgressDialog(this);
 			p_dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
@@ -175,7 +173,6 @@ public class express extends Activity {
 			p_dialog.setTitle("请等待");
 		}
 		if (UserData.getExpress() != null) {
-			editText1.setText(UserData.getExpress().getNu());
 			num = UserData.getExpress().getNu();
 			p_dialog.show();
 			new Thread(submitRunnnable).start();
@@ -186,7 +183,7 @@ public class express extends Activity {
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-	
+
 	}
 
 }

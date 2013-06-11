@@ -48,7 +48,7 @@ public class FragmentHistoryExpress extends Fragment {
 
 		LayoutInflater myInflater = (LayoutInflater) getActivity()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View layout = myInflater.inflate(R.layout.history_express, container,
+		View layout = myInflater.inflate(R.layout.history_express_list, container,
 				false);
 		listView = (ListView) layout.findViewById(R.id.listView_expresslist);
 		listView.setDividerHeight(0);
@@ -60,7 +60,7 @@ public class FragmentHistoryExpress extends Fragment {
 					int position, long id) {
 				UserData.setExpress(lp.get(position));
 				startActivityForResult(
-						(new Intent().setClass(getActivity(), express.class)),
+						(new Intent().setClass(getActivity(), expressDetail.class)),
 						100);
 			}
 		});

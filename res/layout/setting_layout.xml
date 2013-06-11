@@ -3,11 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/window_bg"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:textSize="@dimen/default_text_size" >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dip"
+        android:layout_height="45dip"
         android:background="@drawable/bg_title_bar" >
 
         <TextView
@@ -43,9 +44,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12.0dip"
                         android:layout_weight="1.0"
-                        android:text="界面显示"
+                        android:text="@string/setting_function"
                         android:textColor="#ff333333"
-                        android:textSize="16.0dip" />
+                        android:textSize="@dimen/default_text_size" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -68,9 +69,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12.0dip"
                         android:layout_weight="1.0"
-                        android:text="反馈建议"
+                        android:text="@string/settings_feedback"
                         android:textColor="#ff333333"
-                        android:textSize="16.0dip" />
+                        android:textSize="@dimen/default_text_size" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -86,14 +87,16 @@
 
                 <!-- 关于 -->
 
-                <LinearLayout style="@style/leba_bg_bottom_layout" >
+                <LinearLayout
+                    android:id="@+id/about_setting"
+                    style="@style/leba_bg_bottom_layout" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12.0dip"
                         android:layout_weight="1.0"
-                        android:text="关于"
+                        android:text="@string/settings_about"
                         android:textColor="#ff333333"
                         android:textSize="16.0dip" />
 
@@ -118,7 +121,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12.0dip"
                         android:layout_weight="1.0"
-                        android:text="声音"
+                        android:text="@string/bak_chat_safe_tip"
                         android:textColor="#ff333333"
                         android:textSize="16.0dip" />
 
@@ -136,14 +139,14 @@
 
                 <!-- 震动提示 -->
 
-                <LinearLayout style="@style/leba_bg_mid_layout" >
+                <LinearLayout android:id="@+id/update_check" style="@style/leba_bg_mid_layout" >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12.0dip"
                         android:layout_weight="1.0"
-                        android:text="震动提示"
+                        android:text="@string/funtion_check_update"
                         android:textColor="#ff333333"
                         android:textSize="16.0dip" />
 
@@ -168,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12.0dip"
                         android:layout_weight="1.0"
-                        android:text="消息提示"
+                        android:text="@string/help_using"
                         android:textColor="#ff333333"
                         android:textSize="16.0dip" />
 

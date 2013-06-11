@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bottom_item_selector"
             android:drawableTop="@drawable/bottom_bar_icon_team_selector"
-            android:text="@string/bottom_item_one"
+            android:text="@string/express_search"
             android:textColor="@color/bottom_item_text_selector"
             android:textSize="12sp" />
     </RelativeLayout>
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bottom_item_selector"
             android:drawableTop="@drawable/bottom_bar_icon_team_selector"
-            android:text="@string/bottom_item_two"
+            android:text="@string/express_history"
             android:textColor="@color/bottom_item_text_selector"
             android:textSize="12sp" />
     </RelativeLayout>

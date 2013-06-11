@@ -5,18 +5,12 @@
     android:background="@drawable/bg_splash" >
 
     <ImageView
-        android:id="@+id/blank_view"
-        android:layout_width="wrap_content"
-        android:layout_height="620.0px"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/blank" />
-
-    <ImageView
         android:id="@+id/splash_anim"
         android:layout_width="210.0dip"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/blank_view"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="198dp"
         android:src="@drawable/splash_anim"
         android:visibility="visible" />
 

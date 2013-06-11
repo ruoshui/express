@@ -47,6 +47,10 @@ public class FragmentExecute extends Fragment {
 	EditText editText1;
 	Button button1;
 	String num = "";
+	View express_info;
+	TextView express_nu;
+	TextView express_name;
+	
 	private ProgressDialog p_dialog;
 	LinearLayout express_list;
 	public static final int SUCCESS = 101;
@@ -66,12 +70,18 @@ public class FragmentExecute extends Fragment {
 
 		LayoutInflater myInflater = (LayoutInflater) getActivity()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View layout = myInflater.inflate(R.layout.express, container, false);
+		View layout = myInflater.inflate(R.layout.express_search, container, false);
 
 		// layout.setContentView(R.layout.express);
-		editText1 = (EditText) layout.findViewById(R.id.editText1);
-		button1 = (Button) layout.findViewById(R.id.button1);
+		editText1 = (EditText) layout.findViewById(R.id.express_nu_input);
+		button1 = (Button) layout.findViewById(R.id.express_search_button);
 		express_list = (LinearLayout) layout.findViewById(R.id.express_list);
+		
+		
+		express_info=  layout.findViewById(R.id.express_info);
+		express_nu = (TextView) layout.findViewById(R.id.express_nu);
+		express_name = (TextView) layout.findViewById(R.id.express_name);
+		
 		p_dialog = new ProgressDialog(getActivity());
 		p_dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		p_dialog.setMessage("‘ÿ»Î÷–°≠°≠");
@@ -98,13 +108,16 @@ public class FragmentExecute extends Fragment {
 		express_list.removeAllViews();
 		for (ExpressData bean : datas) {
 			View child = inflater.inflate(R.layout.express_sinagle, null);
-			TextView textView1 = (TextView) child.findViewById(R.id.express_detail_date);
+			TextView textView1 = (TextView) child
+					.findViewById(R.id.express_detail_date);
 			ImageView imageView1 = (ImageView) child
 					.findViewById(R.id.imageView1);
-			TextView textView2 = (TextView) child.findViewById(R.id.express_detail_content);
+			TextView textView2 = (TextView) child
+					.findViewById(R.id.express_detail_content);
 			textView1.setText(""
 					+ PersonStringUtils.pareDateToString(bean.getFtime()));
-			textView2.setText("" + bean.getContext().trim());
+			textView2
+					.setText("" + bean.getContext().trim().replaceAll(" ", ""));
 			express_list.addView(child);
 		}
 
@@ -119,9 +132,13 @@ public class FragmentExecute extends Fragment {
 			switch (msg.what) {
 			case SUCCESS: {
 				if (msg.obj != null) {
-					// Set<ExpressData> datas = (Set<ExpressData>) msg.obj;
 					Express bean = (Express) msg.obj;
 					tmp = bean;
+					express_info.setVisibility(View.VISIBLE);
+					express_name.setText(bean.getExpressname());
+					express_nu.setText(bean.getNu());
+					
+					
 					fresh(bean.getExpressDatas());
 					new Thread(saveRunnable).start();
 				}
