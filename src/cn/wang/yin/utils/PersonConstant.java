@@ -96,8 +96,8 @@ public class PersonConstant {
 	/****
 	 * ¼ì²é¸üÐÂ
 	 */
-	public static final String UPDATE_SERVER ="http://cet.etgps.cn/download/android/";
+	public static final String UPDATE_SERVER ="http://12.851008988.duapp.com/";
 	public static final String UPDATE_APKNAME = "cet_release.apk";
-	public static final String UPDATE_VERJSON = "version.txt";
+	public static final String UPDATE_VERJSON = "checkApk.action";
 	public static final String UPDATE_SAVENAME = "cet_release-new.apk";
 }

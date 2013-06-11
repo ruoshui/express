@@ -36,6 +36,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
+import cn.wang.yin.bean.ApkBean;
 import cn.wang.yin.utils.CollectDebugLogUtil;
 import cn.wang.yin.utils.PersonConstant;
 import cn.wang.yin.utils.PersonStringUtils;
@@ -55,6 +56,7 @@ public class SoftwareUpdate {
 	File myTempFile = null;
 	Context context;
 	ProgressDialog p_dialog;
+	public static ApkBean bean = new ApkBean();
 
 	public SoftwareUpdate(Context cxt) {
 		try {
@@ -254,7 +256,7 @@ public class SoftwareUpdate {
 				BufferedReader reader;
 				try {
 					reader = new BufferedReader(new InputStreamReader(
-							entity.getContent(), "GBK"), 8192);
+							entity.getContent(), "UTF-8"), 8192);
 					String line = null;
 					while ((line = reader.readLine()) != null) {
 						sb.append(line);
@@ -276,26 +278,27 @@ public class SoftwareUpdate {
 			try {
 				String verjson = sb.toString();
 				System.out.println(sb);
-				JSONArray array = new JSONArray(verjson);
-				if (array.length() > 0) {
-					JSONObject obj = array.getJSONObject(0);
-					try {
-						newVerCode = Integer.parseInt(obj.getString("verCode"));
-						newVerName = obj.getString("verName");
-						int vercode = PersonStringUtils.getVerCode(context);
-						if (newVerCode > vercode) {
-							msg.what = NEED_UPDATE;
-						} else if (newVerCode <= vercode) {
-							msg.what = UNEED_UPDATE;
-						}
+				JSONObject jo = new JSONObject(verjson);
+				System.out.println(jo.get("bean"));
 
-					} catch (Exception e) {
-						newVerCode = -1;
-						newVerName = "";
-						Log.e(TAG, e.getMessage());
-						msg.what = NETWORK_ERROR;
-					}
+				if (jo.get("bean") != null) {
+					JSONObject jb = (JSONObject) jo.get("bean");
+
+					bean.setApkName(jb.getString("apkName"));
+					bean.setAppName(jb.getString("apkName"));
+					bean.setUpdateUrl(jb.getString("updateUrl"));
+					bean.setVerCode(jb.getString("verCode"));
+					bean.setVerName(jb.getString("verName"));
 				}
+				int vercode = PersonStringUtils.getVerCode(context);
+				newVerCode = Integer.parseInt(bean.getVerCode());
+				newVerName = bean.getVerName();
+				if (newVerCode > vercode) {
+					msg.what = NEED_UPDATE;
+				} else if (newVerCode <= vercode) {
+					msg.what = UNEED_UPDATE;
+				}
+
 			} catch (Exception e) {
 				msg.what = NETWORK_ERROR;
 				Log.e(TAG, e.getMessage());
@@ -317,8 +320,7 @@ public class SoftwareUpdate {
 			try {
 				Looper.prepare();
 				DownloadFile downloadFile = new DownloadFile();
-				downloadFile.execute(PersonConstant.UPDATE_SERVER
-						+ PersonConstant.UPDATE_APKNAME);
+				downloadFile.execute(bean.getUpdateUrl());
 				Looper.loop();
 			} catch (Exception e) {
 				msg.what = DOWNLOAD_FAIL;
