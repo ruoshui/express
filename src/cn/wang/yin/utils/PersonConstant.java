@@ -29,10 +29,10 @@ public class PersonConstant {
 			+ " u_carnumber varchar(30),"
 			+ " u_vehicleType varchar(30),"
 			+ " u_remark text ," + "u_deviceid  varchar(30) );";
-	public static final String SQL_EXPRESS_HISTORY = "create table if not exists expressDetail("
+	public static final String SQL_EXPRESS_HISTORY = "create table if not exists express("
 			+ " id  integer primary key autoincrement,"
 			+ " nu varchar(80),"
-			+ "updatetime  varchar(80))";
+			+ "updatetime  varchar(80),content varchar(500),status integer)";
 
 	public static final String SQL_LOGIN_OUT = "update  personal_users  set [u_password]=null  where [u_phonenumber]=?;";
 	public static final String CHECK_FAIL = "请检查用户名密码！";

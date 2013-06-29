@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import cn.wang.yin.personal.R;
+import cn.wang.yin.personal.service.HandlerService;
 import cn.wang.yin.ui.fragment.FragmentExecute;
 import cn.wang.yin.ui.widget.BottomBar;
 import cn.wang.yin.ui.widget.BottomBar.OnItemChangedListener;
@@ -49,6 +50,12 @@ public class FragmentMain extends FragmentActivity implements
 		}
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.frame_main);
+		
+		Intent intent = new Intent(getApplicationContext(),
+				HandlerService.class);
+		startService(intent);
+		
+		
 		final BottomBar bottomBar = (BottomBar) findViewById(R.id.ll_bottom_bar);
 		bottomBar.setOnItemChangedListener(new OnItemChangedListener() {
 

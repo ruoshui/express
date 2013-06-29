@@ -26,6 +26,7 @@ import cn.shui.express.scan.hessian.bean.ExpressData;
 import cn.wang.yin.hessian.api.Remot;
 import cn.wang.yin.personal.R;
 import cn.wang.yin.personal.user.data.UserData;
+import cn.wang.yin.utils.ExpressType;
 import cn.wang.yin.utils.PersonConstant;
 import cn.wang.yin.utils.PersonStringUtils;
 import cn.wang.yin.utils.RemoteFactoryUtils;
@@ -96,7 +97,8 @@ public class expressDetail extends Activity {
 					Express bean = (Express) msg.obj;
 					Set<ExpressData> datas = bean.getExpressDatas();
 					// bean.getCom()
-					express_name.setText(bean.getExpressname());
+					express_name.setText(ExpressType.getMap()
+							.get(bean.getCom()));
 					express_nu.setText(bean.getNu());
 
 					fresh(datas);

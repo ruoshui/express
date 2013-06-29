@@ -22,6 +22,7 @@ import android.widget.TextView;
 import cn.shui.express.scan.hessian.bean.Express;
 import cn.wang.yin.personal.R;
 import cn.wang.yin.personal.user.data.UserData;
+import cn.wang.yin.utils.PersonConstant;
 import cn.wang.yin.utils.PersonDbUtils;
 import cn.wang.yin.utils.PersonStringUtils;
 
@@ -36,7 +37,11 @@ public class FragmentHistoryExpress extends Fragment {
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-
+		
+		PersonDbUtils.init(
+				getActivity().getApplicationContext(),
+				getActivity().getSharedPreferences(
+						PersonConstant.USER_AGENT_INFO, Context.MODE_PRIVATE));
 	}
 
 	@Override
@@ -48,8 +53,8 @@ public class FragmentHistoryExpress extends Fragment {
 
 		LayoutInflater myInflater = (LayoutInflater) getActivity()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View layout = myInflater.inflate(R.layout.history_express_list, container,
-				false);
+		View layout = myInflater.inflate(R.layout.history_express_list,
+				container, false);
 		listView = (ListView) layout.findViewById(R.id.listView_expresslist);
 		listView.setDividerHeight(0);
 		listView.setCacheColorHint(Color.TRANSPARENT);
@@ -59,9 +64,8 @@ public class FragmentHistoryExpress extends Fragment {
 			public void onItemClick(AdapterView<?> arg0, View view,
 					int position, long id) {
 				UserData.setExpress(lp.get(position));
-				startActivityForResult(
-						(new Intent().setClass(getActivity(), expressDetail.class)),
-						100);
+				startActivityForResult((new Intent().setClass(getActivity(),
+						expressDetail.class)), 100);
 			}
 		});
 
@@ -72,6 +76,9 @@ public class FragmentHistoryExpress extends Fragment {
 
 		@Override
 		public void run() {
+			
+			
+			
 			SQLiteDatabase read = PersonDbUtils.getInstance()
 					.getReadableDatabase();
 			Cursor cur = read.query(true, "express", new String[] { "id", "nu",

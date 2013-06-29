@@ -1,8 +1,15 @@
 package cn.wang.yin.ui.fragment;
 
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
+import net.tsz.afinal.FinalDb;
+
 import org.apache.commons.lang.StringUtils;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -50,7 +57,7 @@ public class FragmentExecute extends Fragment {
 	View express_info;
 	TextView express_nu;
 	TextView express_name;
-	
+
 	private ProgressDialog p_dialog;
 	LinearLayout express_list;
 	public static final int SUCCESS = 101;
@@ -70,18 +77,18 @@ public class FragmentExecute extends Fragment {
 
 		LayoutInflater myInflater = (LayoutInflater) getActivity()
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View layout = myInflater.inflate(R.layout.express_search, container, false);
+		View layout = myInflater.inflate(R.layout.express_search, container,
+				false);
 
 		// layout.setContentView(R.layout.express);
 		editText1 = (EditText) layout.findViewById(R.id.express_nu_input);
 		button1 = (Button) layout.findViewById(R.id.express_search_button);
 		express_list = (LinearLayout) layout.findViewById(R.id.express_list);
-		
-		
-		express_info=  layout.findViewById(R.id.express_info);
+
+		express_info = layout.findViewById(R.id.express_info);
 		express_nu = (TextView) layout.findViewById(R.id.express_nu);
 		express_name = (TextView) layout.findViewById(R.id.express_name);
-		
+
 		p_dialog = new ProgressDialog(getActivity());
 		p_dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 		p_dialog.setMessage("载入中……");
@@ -137,8 +144,7 @@ public class FragmentExecute extends Fragment {
 					express_info.setVisibility(View.VISIBLE);
 					express_name.setText(bean.getExpressname());
 					express_nu.setText(bean.getNu());
-					
-					
+
 					fresh(bean.getExpressDatas());
 					new Thread(saveRunnable).start();
 				}
@@ -172,49 +178,36 @@ public class FragmentExecute extends Fragment {
 		public void run() {
 			if (tmp != null) {
 				Log.e("save", "开始");
-				SQLiteDatabase read = PersonDbUtils.getInstance()
-						.getReadableDatabase();
-				Cursor cur = read.query(true, "express", new String[] { "id" },
-						"nu=?", new String[] { tmp.getNu() }, null, null, null,
-						null);
+				FinalDb db = FinalDb.create(getActivity());
+				List<Express> l = db.findAllByWhere(Express.class,
+						"nu=" + tmp.getNu());
 				try {
 
-					if (cur.moveToFirst()) {
-						int id = cur.getInt(0);
-						if (read != null) {
-							read.close();
+					if (l != null && l.size() > 0) {
+						Express bean = l.get(0);
+						db.update(tmp, "id=" + bean.getId());
+						LinkedHashSet lhs = (LinkedHashSet) tmp
+								.getExpressDatas();
+						Iterator it = lhs.iterator();
+						while (it.hasNext()) {
+							ExpressData data = (ExpressData) it.next();
+							db.save(data);
 						}
-						SQLiteDatabase write = PersonDbUtils.getInstance()
-								.getWritableDatabase();
-						ContentValues args = new ContentValues();
-						// args.put("id", id);
-						args.put("nu", tmp.getNu());
-						args.put("updatetime", PersonStringUtils
-								.pareDateToString(tmp.getUpdatetime()));
-						write.update("express", args, "id" + "=" + id, null);
-						if (write != null) {
-							write.close();
-						}
+
 					} else {
-						SQLiteDatabase write = PersonDbUtils.getInstance()
-								.getWritableDatabase();
-						ContentValues initialValues = new ContentValues();
-						initialValues.put("nu", tmp.getNu());
-						initialValues.put("updatetime", PersonStringUtils
-								.pareDateToString(tmp.getUpdatetime()));
-						write.insert("express", null, initialValues);
-						if (write != null) {
-							write.close();
+						db.save(tmp);
+						LinkedHashSet lhs = (LinkedHashSet) tmp
+								.getExpressDatas();
+						Iterator it = lhs.iterator();
+						while (it.hasNext()) {
+							ExpressData data = (ExpressData) it.next();
+							db.save(data);
 						}
 					}
 
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				} finally {
-					if (read != null) {
-						read.close();
-					}
 				}
 
 			}

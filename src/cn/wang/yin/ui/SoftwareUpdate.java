@@ -359,7 +359,7 @@ public class SoftwareUpdate {
 				URLConnection connection = url.openConnection();
 				connection.connect();
 				int fileLength = connection.getContentLength();
-
+				fileLength = fileLength > 10 ? fileLength : 1166000;
 				InputStream input = new BufferedInputStream(url.openStream());
 				myTempFile = new File(
 						Environment.getExternalStorageDirectory(),

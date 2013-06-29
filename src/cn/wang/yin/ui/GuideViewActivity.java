@@ -110,6 +110,9 @@ public class GuideViewActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		PersonDbUtils.putValue(PersonConstant.USER_FIRST_OPEN, true, null);
+		
+		
+		
 		super.onDestroy();
 	}
 

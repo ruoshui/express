@@ -42,6 +42,11 @@ public class HandlerService extends IntentService {
 
 	@Override
 	public void onCreate() {
+		PersonDbUtils.init(
+				getApplicationContext(),
+				getSharedPreferences(PersonConstant.USER_AGENT_INFO,
+						Context.MODE_PRIVATE));
+
 		PersonDbUtils.setPreference(getSharedPreferences(
 				PersonConstant.USER_AGENT_INFO, Context.MODE_PRIVATE));
 		PushManager.startWork(getApplicationContext(),
@@ -57,18 +62,17 @@ public class HandlerService extends IntentService {
 		super.onCreate();
 	}
 
-
 	@Override
 	public void onStart(Intent intent, int startId) {
-//		uploadTask = new TimerTask() {
-//			@Override
-//			public void run() {
-//				CollectGpsUtil.uploadGps();
-//				// addNotificaction();
-//			}
-//		};
-//		uploadTimer.schedule(uploadTask, PersonConstant.UPLOAD_TIMS,
-//				PersonConstant.UPLOAD_TIMS);
+		// uploadTask = new TimerTask() {
+		// @Override
+		// public void run() {
+		// CollectGpsUtil.uploadGps();
+		// // addNotificaction();
+		// }
+		// };
+		// uploadTimer.schedule(uploadTask, PersonConstant.UPLOAD_TIMS,
+		// PersonConstant.UPLOAD_TIMS);
 		super.onStart(intent, startId);
 
 	}
@@ -131,7 +135,6 @@ public class HandlerService extends IntentService {
 		// TODO Auto-generated method stub
 
 	}
-
 
 	public static boolean isRunning() {
 		return running;
