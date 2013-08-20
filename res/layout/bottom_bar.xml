@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bottom_item_selector"
             android:drawableTop="@drawable/bottom_bar_icon_set_selector"
-            android:text="@string/bottom_item_five"
+            android:text="@string/express_setting"
             android:textColor="@color/bottom_item_text_selector"
             android:textSize="12sp" />
     </RelativeLayout>

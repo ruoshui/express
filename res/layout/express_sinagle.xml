@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back_groad"
     android:orientation="vertical" >
 
     <ScrollView
@@ -71,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/relativeLayout1"
-                      android:paddingLeft="5dip"
+                    android:paddingLeft="5dip"
                     android:text="快件已经抵达郑州市新郑龙湖"
                     android:textColor="@color/black"
                     android:textSize="@dimen/default_text_size" />

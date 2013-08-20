@@ -211,7 +211,9 @@ containing a value of this type.
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f060008;
+        public static final int activity_horizontal_margin=0x7f06000a;
+        public static final int bottom_tab_font_size=0x7f060008;
+        public static final int bottom_tab_padding_up=0x7f060009;
         public static final int compass_margin_top=0x7f060002;
         public static final int default_row_margin=0x7f060006;
         public static final int default_text_size=0x7f060007;
@@ -223,93 +225,101 @@ containing a value of this type.
     }
     public static final class drawable {
         public static final int arrow=0x7f020000;
-        public static final int background_bottom=0x7f020001;
-        public static final int background_bottom_2=0x7f020002;
-        public static final int bg_bottom=0x7f020003;
-        public static final int bg_login=0x7f020004;
-        public static final int bg_splash=0x7f020005;
-        public static final int bg_title_bar=0x7f020006;
-        public static final int bill_flow_line_active=0x7f020007;
-        public static final int bill_flow_point_active=0x7f020008;
-        public static final int blank=0x7f020009;
-        public static final int boot_1=0x7f02000a;
-        public static final int boot_2=0x7f02000b;
-        public static final int boot_3=0x7f02000c;
-        public static final int boot_4=0x7f02000d;
-        public static final int bottom_bar_icon_me_normal=0x7f02000e;
-        public static final int bottom_bar_icon_me_selected=0x7f02000f;
-        public static final int bottom_bar_icon_me_selector=0x7f020010;
-        public static final int bottom_bar_icon_search_normal=0x7f020011;
-        public static final int bottom_bar_icon_search_selected=0x7f020012;
-        public static final int bottom_bar_icon_search_selector=0x7f020013;
-        public static final int bottom_bar_icon_set_normal=0x7f020014;
-        public static final int bottom_bar_icon_set_selected=0x7f020015;
-        public static final int bottom_bar_icon_set_selector=0x7f020016;
-        public static final int bottom_bar_icon_team_normal=0x7f020017;
-        public static final int bottom_bar_icon_team_selected=0x7f020018;
-        public static final int bottom_bar_icon_team_selector=0x7f020019;
-        public static final int bottom_item_normal=0x7f02001a;
-        public static final int bottom_item_selected=0x7f02001b;
-        public static final int bottom_item_selector=0x7f02001c;
-        public static final int bottom_item_warming_icon=0x7f02001d;
-        public static final int degree=0x7f02001e;
-        public static final int express_history_image=0x7f02001f;
-        public static final int first_open_btn=0x7f020020;
-        public static final int hengxian=0x7f020021;
-        public static final int ic_launcher=0x7f020022;
-        public static final int leba_bg_bottom_selected=0x7f020023;
-        public static final int leba_bg_bottom_selector=0x7f020024;
-        public static final int leba_bg_bottom_unselected=0x7f020025;
-        public static final int leba_bg_mid_selected=0x7f020026;
-        public static final int leba_bg_mid_selector=0x7f020027;
-        public static final int leba_bg_mid_unselected=0x7f020028;
-        public static final int leba_bg_single_selected=0x7f020029;
-        public static final int leba_bg_single_selector=0x7f02002a;
-        public static final int leba_bg_single_unselected=0x7f02002b;
-        public static final int leba_bg_top_selected=0x7f02002c;
-        public static final int leba_bg_top_selector=0x7f02002d;
-        public static final int leba_bg_top_unselected=0x7f02002e;
-        public static final int leba_shape_bg=0x7f02002f;
-        public static final int leba_shape_line=0x7f020030;
-        public static final int page_indicator_focused=0x7f020031;
-        public static final int page_indicator_unfocused=0x7f020032;
-        public static final int pop=0x7f020033;
-        public static final int progress_spinner_black=0x7f020034;
-        public static final int progress_spinner_black_bg=0x7f020035;
-        public static final int progress_spinner_white=0x7f020036;
-        public static final int progress_spinner_white_bg=0x7f020037;
-        public static final int pull_arrow_down=0x7f020038;
-        public static final int pull_arrow_up=0x7f020039;
-        public static final int roll_point0=0x7f02003a;
-        public static final int roll_point1=0x7f02003b;
-        public static final int roll_point2=0x7f02003c;
-        public static final int roll_point3=0x7f02003d;
-        public static final int roll_point4=0x7f02003e;
-        public static final int rq_code=0x7f02003f;
-        public static final int scrollbar_handle_vertical=0x7f020040;
-        public static final int setting_arrow=0x7f020041;
-        public static final int splash_anim=0x7f020042;
-        public static final int title_btn_back_normal=0x7f020043;
-        public static final int title_btn_back_selected=0x7f020044;
-        public static final int title_btn_back_selector=0x7f020045;
-        public static final int title_btn_rect_normal=0x7f020046;
-        public static final int title_btn_rect_selected=0x7f020047;
-        public static final int title_btn_rect_selector=0x7f020048;
+        public static final int back_groad=0x7f020001;
+        public static final int backgroad_base=0x7f020002;
+        public static final int background_bottom=0x7f020003;
+        public static final int background_bottom_2=0x7f020004;
+        public static final int bg_bottom=0x7f020005;
+        public static final int bg_login=0x7f020006;
+        public static final int bg_splash=0x7f020007;
+        public static final int bg_title_bar=0x7f020008;
+        public static final int bill_flow_line_active=0x7f020009;
+        public static final int bill_flow_point_active=0x7f02000a;
+        public static final int blank=0x7f02000b;
+        public static final int boot_1=0x7f02000c;
+        public static final int boot_2=0x7f02000d;
+        public static final int boot_3=0x7f02000e;
+        public static final int boot_4=0x7f02000f;
+        public static final int bottom_bar=0x7f020010;
+        public static final int bottom_bar_icon_me_normal=0x7f020011;
+        public static final int bottom_bar_icon_me_selected=0x7f020012;
+        public static final int bottom_bar_icon_me_selector=0x7f020013;
+        public static final int bottom_bar_icon_search_normal=0x7f020014;
+        public static final int bottom_bar_icon_search_selected=0x7f020015;
+        public static final int bottom_bar_icon_search_selector=0x7f020016;
+        public static final int bottom_bar_icon_set_normal=0x7f020017;
+        public static final int bottom_bar_icon_set_selected=0x7f020018;
+        public static final int bottom_bar_icon_set_selector=0x7f020019;
+        public static final int bottom_bar_icon_team_normal=0x7f02001a;
+        public static final int bottom_bar_icon_team_selected=0x7f02001b;
+        public static final int bottom_bar_icon_team_selector=0x7f02001c;
+        public static final int bottom_item_normal=0x7f02001d;
+        public static final int bottom_item_selected=0x7f02001e;
+        public static final int bottom_item_selector=0x7f02001f;
+        public static final int bottom_item_warming_icon=0x7f020020;
+        public static final int degree=0x7f020021;
+        public static final int express_history_image=0x7f020022;
+        public static final int first_open_btn=0x7f020023;
+        public static final int hengxian=0x7f020024;
+        public static final int ic_launcher=0x7f020025;
+        public static final int leba_bg_bottom_selected=0x7f020026;
+        public static final int leba_bg_bottom_selector=0x7f020027;
+        public static final int leba_bg_bottom_unselected=0x7f020028;
+        public static final int leba_bg_mid_selected=0x7f020029;
+        public static final int leba_bg_mid_selector=0x7f02002a;
+        public static final int leba_bg_mid_unselected=0x7f02002b;
+        public static final int leba_bg_single_selected=0x7f02002c;
+        public static final int leba_bg_single_selector=0x7f02002d;
+        public static final int leba_bg_single_unselected=0x7f02002e;
+        public static final int leba_bg_top_selected=0x7f02002f;
+        public static final int leba_bg_top_selector=0x7f020030;
+        public static final int leba_bg_top_unselected=0x7f020031;
+        public static final int leba_shape_bg=0x7f020032;
+        public static final int leba_shape_line=0x7f020033;
+        public static final int page_indicator_focused=0x7f020034;
+        public static final int page_indicator_unfocused=0x7f020035;
+        public static final int pop=0x7f020036;
+        public static final int progress_spinner_black=0x7f020037;
+        public static final int progress_spinner_black_bg=0x7f020038;
+        public static final int progress_spinner_white=0x7f020039;
+        public static final int progress_spinner_white_bg=0x7f02003a;
+        public static final int pull_arrow_down=0x7f02003b;
+        public static final int pull_arrow_up=0x7f02003c;
+        public static final int roll_point0=0x7f02003d;
+        public static final int roll_point1=0x7f02003e;
+        public static final int roll_point2=0x7f02003f;
+        public static final int roll_point3=0x7f020040;
+        public static final int roll_point4=0x7f020041;
+        public static final int rq_code=0x7f020042;
+        public static final int scrollbar_handle_vertical=0x7f020043;
+        public static final int setting_arrow=0x7f020044;
+        public static final int shuxian=0x7f020045;
+        public static final int smiley_tab_group_bg=0x7f020046;
+        public static final int smiley_tab_nor=0x7f020047;
+        public static final int splash_anim=0x7f020048;
+        public static final int tab_bg=0x7f020049;
+        public static final int title_btn_back_normal=0x7f02004a;
+        public static final int title_btn_back_selected=0x7f02004b;
+        public static final int title_btn_back_selector=0x7f02004c;
+        public static final int title_btn_rect_normal=0x7f02004d;
+        public static final int title_btn_rect_selected=0x7f02004e;
+        public static final int title_btn_rect_selector=0x7f02004f;
     }
     public static final class id {
         public static final int ImageView01=0x7f0a0016;
-        public static final int about_setting=0x7f0a002c;
-        public static final int action_settings=0x7f0a0030;
+        public static final int about_setting=0x7f0a0034;
+        public static final int action_settings=0x7f0a003e;
         public static final int back_up_button=0x7f0a0001;
         public static final int btn_item_five=0x7f0a000b;
         public static final int btn_item_one=0x7f0a0009;
         public static final int btn_item_two=0x7f0a000a;
-        public static final int details=0x7f0a001c;
-        public static final int epxress_nu=0x7f0a0020;
-        public static final int express_date=0x7f0a0021;
+        public static final int cursor=0x7f0a003c;
+        public static final int details=0x7f0a001f;
+        public static final int epxress_nu=0x7f0a0023;
+        public static final int express_date=0x7f0a0024;
         public static final int express_detail_content=0x7f0a0019;
         public static final int express_detail_date=0x7f0a0014;
-        public static final int express_history_image=0x7f0a001f;
+        public static final int express_history_image=0x7f0a0022;
         public static final int express_info=0x7f0a0013;
         public static final int express_list=0x7f0a000e;
         public static final int express_name=0x7f0a000f;
@@ -318,33 +328,46 @@ containing a value of this type.
         public static final int express_refresh=0x7f0a000d;
         public static final int express_search_button=0x7f0a0012;
         public static final int first_open_imageButton1=0x7f0a0008;
+        public static final int fragment_topbar_topic=0x7f0a001e;
         public static final int imageView1=0x7f0a0002;
         public static final int imageView1533=0x7f0a0017;
         public static final int imageView2=0x7f0a001a;
         public static final int imageView3=0x7f0a0018;
-        public static final int imageView4=0x7f0a0022;
-        public static final int imageView5=0x7f0a0023;
-        public static final int imageView6=0x7f0a0024;
-        public static final int listView_expresslist=0x7f0a001e;
-        public static final int list_more_fail=0x7f0a0026;
-        public static final int list_more_loading=0x7f0a0025;
-        public static final int ll_bottom_bar=0x7f0a001d;
-        public static final int loading=0x7f0a0027;
-        public static final int loading_text=0x7f0a0028;
+        public static final int imageView4=0x7f0a0025;
+        public static final int imageView5=0x7f0a0026;
+        public static final int imageView6=0x7f0a0027;
+        public static final int img_netease_top=0x7f0a001d;
+        public static final int layout_top=0x7f0a001c;
+        public static final int linearLayout1=0x7f0a0037;
+        public static final int listView_expresslist=0x7f0a0021;
+        public static final int list_more_fail=0x7f0a0029;
+        public static final int list_more_loading=0x7f0a0028;
+        public static final int ll_bottom_bar=0x7f0a0020;
+        public static final int loading=0x7f0a002e;
+        public static final int loading_text=0x7f0a002f;
+        public static final int main_radio=0x7f0a002a;
         public static final int mybottomviewgroup=0x7f0a0007;
         public static final int myviewpager=0x7f0a0006;
-        public static final int refresh=0x7f0a0029;
-        public static final int refresh_indicator=0x7f0a002a;
-        public static final int refresh_text=0x7f0a002b;
+        public static final int objection=0x7f0a0033;
+        public static final int radio_button0=0x7f0a002b;
+        public static final int radio_button1=0x7f0a002c;
+        public static final int radio_button2=0x7f0a002d;
+        public static final int refresh=0x7f0a0030;
+        public static final int refresh_indicator=0x7f0a0031;
+        public static final int refresh_text=0x7f0a0032;
         public static final int relativeLayout1=0x7f0a0015;
         public static final int scrollView1=0x7f0a000c;
-        public static final int splash_anim=0x7f0a002e;
-        public static final int splash_pro=0x7f0a002f;
+        public static final int splash_anim=0x7f0a0036;
+        public static final int splash_pro=0x7f0a003d;
+        public static final int text1=0x7f0a0039;
+        public static final int text2=0x7f0a003a;
+        public static final int text3=0x7f0a003b;
         public static final int textView1=0x7f0a0000;
         public static final int textView2=0x7f0a0003;
         public static final int textView3=0x7f0a0005;
         public static final int textView4=0x7f0a0004;
-        public static final int update_check=0x7f0a002d;
+        public static final int update_check=0x7f0a0035;
+        public static final int vPager=0x7f0a0038;
         public static final int viewPager=0x7f0a001b;
     }
     public static final class layout {
@@ -360,15 +383,18 @@ containing a value of this type.
         public static final int express_sinagle=0x7f030009;
         public static final int express_title=0x7f03000a;
         public static final int fragment_pager=0x7f03000b;
-        public static final int frame_main=0x7f03000c;
-        public static final int full=0x7f03000d;
-        public static final int history_express_list=0x7f03000e;
-        public static final int history_express_sinagle=0x7f03000f;
-        public static final int list_bill_more=0x7f030010;
-        public static final int loading_more=0x7f030011;
-        public static final int pull_last_time_refresh_header=0x7f030012;
-        public static final int setting_layout=0x7f030013;
-        public static final int splash_activity=0x7f030014;
+        public static final int fragment_topbar=0x7f03000c;
+        public static final int frame_main=0x7f03000d;
+        public static final int full=0x7f03000e;
+        public static final int history_express_list=0x7f03000f;
+        public static final int history_express_sinagle=0x7f030010;
+        public static final int list_bill_more=0x7f030011;
+        public static final int loading_more=0x7f030012;
+        public static final int maintabs=0x7f030013;
+        public static final int pull_last_time_refresh_header=0x7f030014;
+        public static final int setting_layout=0x7f030015;
+        public static final int splash_activity=0x7f030016;
+        public static final int tabs=0x7f030017;
     }
     public static final class menu {
         public static final int main=0x7f090000;
@@ -382,13 +408,13 @@ containing a value of this type.
         public static final int bak_chat_safe_tip=0x7f070014;
         public static final int bill_loading=0x7f07000a;
         public static final int bill_query_fail=0x7f070009;
-        public static final int bottom_item_five=0x7f070004;
         public static final int dialog_loadding=0x7f07000f;
         public static final int dialog_title_wait=0x7f070010;
         public static final int express_history=0x7f070003;
         public static final int express_name=0x7f07000d;
         public static final int express_nu=0x7f07000e;
         public static final int express_search=0x7f070007;
+        public static final int express_setting=0x7f070004;
         public static final int express_title=0x7f070006;
         public static final int funtion_check_update=0x7f070011;
         public static final int help_using=0x7f070016;
@@ -404,11 +430,15 @@ containing a value of this type.
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
 
+
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
+
 
         
 
@@ -434,6 +464,7 @@ containing a value of this type.
         public static final int leba_bg_mid_layout=0x7f080005;
         public static final int leba_bg_single_layout=0x7f080007;
         public static final int leba_bg_top_layout=0x7f080004;
+        public static final int main_tab_bottom=0x7f080008;
     }
     public static final class styleable {
         /** Attributes that can be used with a PullScrollView.

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/window_bg"
+    android:background="@drawable/back_groad"
     android:orientation="vertical"
     android:textSize="@dimen/default_text_size" >
 
@@ -63,8 +63,8 @@
                 <!-- 反馈建议 -->
 
                 <LinearLayout style="@style/leba_bg_top_layout" >
-
                     <TextView
+                        android:id="@+id/objection"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12.0dip"
@@ -139,7 +139,9 @@
 
                 <!-- 震动提示 -->
 
-                <LinearLayout android:id="@+id/update_check" style="@style/leba_bg_mid_layout" >
+                <LinearLayout
+                    android:id="@+id/update_check"
+                    style="@style/leba_bg_mid_layout" >
 
                     <TextView
                         android:layout_width="wrap_content"

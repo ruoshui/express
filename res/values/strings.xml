@@ -5,7 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="app_label">指南针</string>
     <string name="express_history">历史记录</string>
-    <string name="bottom_item_five">设置</string>
+    <string name="express_setting">设置</string>
     <string name="indicate_value">2</string>
     <string name="express_title">查快递</string>
     <string name="express_search">查询</string>
