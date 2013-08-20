@@ -1,5 +1,6 @@
 package cn.wang.yin.ui;
 
+import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -9,15 +10,6 @@ import net.tsz.afinal.FinalDb;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.caucho.hessian.client.HessianProxyFactory;
-
-import cn.shui.express.scan.hessian.bean.Express;
-import cn.shui.express.scan.hessian.bean.ExpressData;
-import cn.wang.yin.hessian.api.Remot;
-import cn.wang.yin.personal.R;
-import cn.wang.yin.utils.PersonConstant;
-import cn.wang.yin.utils.PersonStringUtils;
-import cn.wang.yin.utils.RemoteFactoryUtils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -34,6 +26,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import cn.shui.express.scan.hessian.bean.Express;
+import cn.shui.express.scan.hessian.bean.ExpressData;
+import cn.wang.yin.hessian.api.Remot;
+import cn.wang.yin.personal.R;
+import cn.wang.yin.utils.PersonConstant;
+import cn.wang.yin.utils.PersonStringUtils;
+import cn.wang.yin.utils.RemoteFactoryUtils;
+
+import com.caucho.hessian.client.HessianProxyFactory;
 
 public class InputSearchActivity extends Activity {
 	EditText editText1;
@@ -217,6 +218,15 @@ public class InputSearchActivity extends Activity {
 			} catch (Exception e) {
 				msg.what = FAIL;
 				e.printStackTrace();
+			}finally{
+				if(msg.obj==null){
+					Express bean=new Express ();
+					bean.setNu(num);
+					bean.setUpdatetime(new Date());
+					FinalDb db = FinalDb.create(getApplicationContext());
+					db.save(bean);
+				}
+				
 			}
 			hand.sendMessage(msg);
 		}
